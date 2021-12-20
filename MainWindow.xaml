@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid  >
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="33"/>
             <RowDefinition Height="643*" MinHeight="137" />
@@ -22,6 +23,19 @@
                         <GradientStop Color="#FFE6F0FA" Offset="0.5"/>
                     </LinearGradientBrush>
                 </StackPanel.Background>
+                <StackPanel.Resources>
+                    <Style x:Key="ButtonStyle" TargetType="Button">
+                        <Setter Property="Margin" Value="18,0,12,0" />
+                        <Setter Property="Foreground" Value="#FF1E395B" />
+                        <Setter Property="Background" Value="{x:Null}" />
+                        <Setter Property="BorderBrush" Value="{x:Null}" />
+                    </Style>
+                </StackPanel.Resources>
+                <Button Content="整理" Style="{StaticResource ButtonStyle}"/>
+                <Button Content="開く" Style="{StaticResource ButtonStyle}"/>
+                <Button Content="印刷" Style="{StaticResource ButtonStyle}"/>
+                <Button Content="書き込む" Style="{StaticResource ButtonStyle}"/>
+                <Button Content="新しいフォルダー" Style="{StaticResource ButtonStyle}"/>
             </StackPanel>
         </Border>
 
