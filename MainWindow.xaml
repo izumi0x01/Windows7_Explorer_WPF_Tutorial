@@ -21,7 +21,6 @@
                         <GradientStop Color="#FFDCE6F4" Offset="0.525"/>
                         <GradientStop Color="#FFE6F0FA" Offset="0.5"/>
                     </LinearGradientBrush>
-                    
                 </StackPanel.Background>
             </StackPanel>
         </Border>
