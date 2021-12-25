@@ -14,10 +14,16 @@ namespace Windows7_Explorer_WPF_Tutorial
         public MainViewModel()
         {
             ObservableCollection<File> files = new ObservableCollection<File>();
-            for (int i = 0; i < 10; i++)
-            {
-                files.Add(new File() { Name = "Image.jpg", ImageSize = "256 × 256", Type = "JPEG イメージ", Size = "256 KB", CreateDate = "2011/11/11 11:11" });
-            }
+
+            files.Add(new File() { Name = "banana.png", ImageSize = "256 × 256", Type = "PNG イメージ", Size = "256 KB", CreateDate = "20XX/XX/XX XX:XX" });
+            files.Add(new File() { Name = "cherry.png", ImageSize = "256 × 256", Type = "PNG イメージ", Size = "256 KB", CreateDate = "20XX/XX/XX XX:XX" });
+            files.Add(new File() { Name = "apple.png", ImageSize = "256 × 256", Type = "PNG イメージ", Size = "256 KB", CreateDate = "20XX/XX/XX XX:XX" });
+            files.Add(new File() { Name = "cherry.png", ImageSize = "256 × 256", Type = "PNG イメージ", Size = "256 KB", CreateDate = "20XX/XX/XX XX:XX" });
+            files.Add(new File() { Name = "pineapple.png", ImageSize = "256 × 256", Type = "PNG イメージ", Size = "256 KB", CreateDate = "20XX/XX/XX XX:XX" });
+            files.Add(new File() { Name = "apple.png", ImageSize = "256 × 256", Type = "PNG イメージ", Size = "256 KB", CreateDate = "20XX/XX/XX XX:XX" });
+            files.Add(new File() { Name = "banana.png", ImageSize = "256 × 256", Type = "PNG イメージ", Size = "256 KB", CreateDate = "20XX/XX/XX XX:XX" });
+            files.Add(new File() { Name = "pineapple.png", ImageSize = "256 × 256", Type = "PNG イメージ", Size = "256 KB", CreateDate = "20XX/XX/XX XX:XX" });
+
             Files = files;
             SelectedFile = files[0];
         }

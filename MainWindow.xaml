@@ -12,7 +12,21 @@
     </Window.DataContext>
 
     <Grid >
-
+        <Grid.Resources>
+            <Style TargetType="TextBlock" x:Key="label1">
+                <Setter Property="Margin" Value="4,4,2,-2"/>
+                <Setter Property="Foreground" Value="#FF5A6779" />
+                <Setter Property="Width" Value="60" />
+                <Setter Property="TextAlignment" Value="Right" />
+            </Style>
+            <Style TargetType="TextBlock" x:Key="label2">
+                <Setter Property="Margin" Value="4,4,2,-2"/>
+                <Setter Property="Foreground" Value="#FF1E395B"/>
+            </Style>
+            <Style TargetType="ListBoxItem">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="33"/>
             <RowDefinition Height="643*" MinHeight="137" />
@@ -52,8 +66,8 @@
 
             <TreeView  Grid.Column="0" BorderThickness="0,0,0,0" Margin="0,0,1,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <TreeViewItem Header="コンピューター" IsExpanded="True">
-                    <TreeViewItem Header="コンピューター" IsExpanded="True"/>
-                    <TreeViewItem Header="コンピューター" IsExpanded="True"/>
+                    <TreeViewItem Header="(C:)" IsExpanded="True"/>
+                    <TreeViewItem Header="(D:)" IsExpanded="True"/>
                 </TreeViewItem>
             </TreeView>
 
@@ -64,21 +78,7 @@
                     <DataTemplate>
                         <Border BorderThickness="0,0,0,1" BorderBrush="#FFDCDCDC" Margin="17,0,10,0">
                             <Grid Height="53" HorizontalAlignment="Stretch">
-                                <Grid.Resources>
-                                    <Style TargetType="TextBlock" x:Key="label1">
-                                        <Setter Property="Margin" Value="4,4,2,-2"/>
-                                        <Setter Property="Foreground" Value="#FF5A6779" />
-                                        <Setter Property="Width" Value="60" />
-                                        <Setter Property="TextAlignment" Value="Right" />
-                                    </Style>
-                                    <Style TargetType="TextBlock" x:Key="label2">
-                                        <Setter Property="Margin" Value="4,4,2,-2"/>
-                                        <Setter Property="Foreground" Value="#FF1E395B"/>
-                                    </Style>
-                                    <Style TargetType="ListBoxItem">
-                                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                                    </Style>
-                                </Grid.Resources>
+      
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="180"/>
@@ -128,5 +128,39 @@
             </Border>
 
         </Grid>
+
+        <Grid Grid.Row="2" Background="#FFF1F5FB" DataContext="{Binding SelectedFile}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="292*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Margin="20, 6, 20 ,7"  Background="#FFF1F5FB" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" Direction="-45" Opacity="0.5" ShadowDepth="2" />
+                </Border.Effect>
+                <Image MinWidth="40" MaxWidth="238" Source="{Binding Name}" />
+            </Border>
+            <WrapPanel Grid.Column="1" Orientation="Vertical">
+                <TextBlock Margin="0,4,0,0" FontSize="13.33333333" Text="{Binding Name}"/>
+                <TextBlock Foreground="#FF5A6779" Text="{Binding Type}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="撮影日時:" Style="{StaticResource label1}"/>
+                    <TextBlock Text="{Binding CreateDate}" Style="{StaticResource label2}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="大きさ:" Style="{StaticResource label1}"/>
+                    <TextBlock Text="{Binding ImageSize}" Style="{StaticResource label2}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="サイズ:" Style="{StaticResource label1}"/>
+                    <TextBlock Text="{Binding Size}" Style="{StaticResource label2}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="作成日時:" Style="{StaticResource label1}"/>
+                    <TextBlock Text="{Binding CreateDate}" Style="{StaticResource label2}"/>
+                </StackPanel>
+            </WrapPanel >
+        </Grid>
+        <GridSplitter VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="1.3" Background="#FFCCD9EA" IsTabStop="False"/>
     </Grid>
 </Window>
